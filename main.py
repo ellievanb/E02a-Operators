@@ -71,7 +71,7 @@ def whichType(t):
     '''
     Returns the python data type of t
     '''
-    toReturn = 't'
+    toReturn = ''
     toReturn = type(t)
     return toReturn
 
@@ -79,7 +79,6 @@ def convertInt(i):
     '''
     Converts i to an integer
     '''
-    toReturn = 0
     toReturn = int(i)
     return toReturn
 
@@ -166,8 +165,9 @@ def shuffleList(l):
     '''
     Returns a list which has all the elements of l in a random order
     '''
-    toReturn = []
-    # add your code here
+    toReturn = [l]
+    random.shuffle(l)
+    toReturn = l
     return toReturn
 
 def listUntil(a):
@@ -175,7 +175,12 @@ def listUntil(a):
     Returns a list contains numbers from 0 to a
     '''
     toReturn = []
-    # add your code here
+    if a < 0:
+        for count in range(a,0):
+            toReturn.append(count)
+    else:
+        for count in range(0,a):
+            toReturn.append(count)
     return toReturn
 
 
